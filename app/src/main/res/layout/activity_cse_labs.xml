@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CSE_labs">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="top"
+        android:paddingBottom="10dp"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:src="@drawable/cse_labs"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/tableRow"
+            app:layout_constraintTop_toTopOf="@+id/tableRow">
+
+
+            <ImageView
+                android:id="@+id/database_and_analytics_lab"
+                android:layout_width="210dp"
+                android:layout_height="140dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/database_and_analytics_lab"
+                app:layout_constraintEnd_toStartOf="@+id/datascience_and_artificial_intelligence_lab"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/datascience_and_artificial_intelligence_lab"
+                android:layout_width="180dp"
+                android:layout_height="160dp"
+                android:layout_marginStart="4dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/datascience_and_artificial_intelligence_lab"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/database_and_analytics_lab"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/networking_and_cybersecurity_lab"
+                android:layout_width="180dp"
+                android:layout_height="160dp"
+                android:scaleType="fitXY"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/networking_and_cybersecurity_lab"
+
+                app:layout_constraintEnd_toStartOf="@+id/web_and_mobile_application_lab"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/database_and_analytics_lab" />
+
+            <ImageView
+                android:id="@+id/web_and_mobile_application_lab"
+                android:layout_width="210dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="4dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/web_and_mobile_application_lab"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/networking_and_cybersecurity_lab"
+                app:layout_constraintTop_toBottomOf="@id/datascience_and_artificial_intelligence_lab" />
+
+
+            <ImageView
+                android:id="@+id/machine_learning_and_deep_learning_lab"
+                android:layout_width="180dp"
+                android:layout_height="140dp"
+                android:scaleType="fitXY"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/machine_learning_and_deep_learning_lab"
+                app:layout_constraintEnd_toStartOf="@+id/programming_lab_3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/networking_and_cybersecurity_lab" />
+
+            <ImageView
+                android:id="@+id/programming_lab_3"
+                android:layout_width="210dp"
+                android:layout_height="170dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/programming_lab_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/machine_learning_and_deep_learning_lab"
+                app:layout_constraintTop_toBottomOf="@id/web_and_mobile_application_lab" />
+
+            <ImageView
+                android:id="@+id/programming_lab_2"
+                android:layout_width="180dp"
+                android:layout_height="140dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/programming_lab_2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/programming_lab_1"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/machine_learning_and_deep_learning_lab" />
+
+            <ImageView
+                android:id="@+id/programming_lab_1"
+                android:layout_width="210dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="4dp"
+                android:scaleType="fitXY"
+                android:layout_marginStart="4dp"
+                android:src="@drawable/programming_lab_1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/programming_lab_2"
+                app:layout_constraintTop_toBottomOf="@id/programming_lab_3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</ScrollView>
