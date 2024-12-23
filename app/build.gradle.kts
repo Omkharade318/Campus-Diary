@@ -52,5 +52,9 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation ("com.airbnb.android:lottie:6.1.0")
+    implementation("com.github.bumptech.glide:glide:4.12.0") // Glide dependency for Image loading
+
+    implementation ("com.airbnb.android:lottie:6.1.0") // lottie animation
+
+    implementation("com.github.denzcoskun:ImageSlideshow:0.1.2")
 }

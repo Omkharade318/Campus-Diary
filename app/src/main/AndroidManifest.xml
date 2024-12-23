@@ -13,6 +13,14 @@
         android:theme="@style/Theme.DYP"
         tools:targetApi="31">
         <activity
+            android:name=".CSE_labs"
+            android:exported="false" />
+        <activity
+            android:name=".Classrooms"
+            android:exported="false"
+            android:label="@string/title_activity_classrooms"
+            android:theme="@style/Theme.DYP.NoActionBar" />
+        <activity
             android:name=".Splash_Screen"
             android:exported="true">
             <intent-filter>
@@ -54,11 +62,6 @@
         <activity
             android:name=".Labs"
             android:exported="false" />
-        <activity
-            android:name=".Classrooms"
-            android:exported="false"
-            android:label="@string/title_activity_classrooms"
-            android:theme="@style/Theme.DYP.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />

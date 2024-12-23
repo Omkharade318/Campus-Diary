@@ -4,9 +4,15 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
+import com.example.dyp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private val binding: ActivityMainBinding by lazy {
+        ActivityMainBinding.inflate(layoutInflater)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -85,5 +91,16 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, Bus_Facility::class.java)
             startActivity(intent)
         }
+
+        // Set up ImageSlider
+        val imageList = ArrayList<SlideModel>()
+        imageList.add(SlideModel(R.drawable.database_and_analytics_lab, ScaleTypes.FIT))
+        imageList.add(SlideModel(R.drawable.datascience_and_artificial_intelligence_lab, ScaleTypes.FIT))
+        imageList.add(SlideModel(R.drawable.networking_and_cybersecurity_lab, ScaleTypes.FIT))
+        imageList.add(SlideModel(R.drawable.machine_learning_and_deep_learning_lab, ScaleTypes.FIT))
+
+        val imageSlider = binding.imageSlider
+        imageSlider.setImageList(imageList, ScaleTypes.FIT)
     }
+    
 }
