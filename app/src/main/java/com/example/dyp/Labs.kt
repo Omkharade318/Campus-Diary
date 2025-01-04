@@ -25,9 +25,15 @@ class Labs : AppCompatActivity() {
         }
 
         binding.CSE.setOnClickListener {
-            val intent = Intent(this, CSE_labs::class.java)
+            val intent = Intent(this, CSE_lab::class.java)
+            startActivity(intent)
+        }
+
+        binding.Electrical.setOnClickListener {
+            val intent = Intent(this, ElectricalLab::class.java)
             startActivity(intent)
         }
 
     }
 }
+

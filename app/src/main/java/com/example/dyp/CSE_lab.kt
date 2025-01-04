@@ -24,9 +24,11 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.example.dyp.ui.theme.DYPTheme
 
-class Garden : AppCompatActivity() {
+class CSE_lab : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -35,25 +37,20 @@ class Garden : AppCompatActivity() {
                 statusBarStyle = SystemBarStyle.light(Color.Transparent.toArgb(), Color.White.toArgb())
             )
             DYPTheme {
-                GardenUI()
+                CSELabUI()
             }
         }
     }
 }
 
 @Composable
-fun GardenUI() {
+fun CSELabUI() {
     // Define a list of image pairs and heights for LazyRows
     val rows = listOf(
-        Pair(R.drawable.garden_pic1 to 180.dp, R.drawable.garden_pic2 to 180.dp),
-        Pair(R.drawable.garden_pic3 to 170.dp, R.drawable.garden_pic4 to 180.dp),
-        Pair(R.drawable.garden_pic5 to 200.dp, R.drawable.garden_pic6 to 220.dp),
-        Pair(R.drawable.garden_pic7 to 220.dp, R.drawable.garden_pic8 to 200.dp),
-        Pair(R.drawable.garden_pic9 to 210.dp, R.drawable.garden_pic_10 to 210.dp),
-        Pair(R.drawable.garden_pic_11 to 190.dp, R.drawable.garden_pic_12 to 220.dp),
-        Pair(R.drawable.garden_pic_13 to 170.dp, R.drawable.garden_pic_14 to 195.dp),
-        Pair(R.drawable.garden_pic_15 to 200.dp, R.drawable.garden_pic_16 to 220.dp),
-        Pair(R.drawable.garden_pic_17 to 205.dp, R.drawable.garden_pic_18 to 220.dp),
+        Pair(R.drawable.database_and_analytics_lab to 180.dp, R.drawable.datascience_and_artificial_intelligence_lab to 180.dp),
+        Pair(R.drawable.networking_and_cybersecurity_lab to 170.dp, R.drawable.web_and_mobile_application_lab to 180.dp),
+        Pair(R.drawable.machine_learning_and_deep_learning_lab to 200.dp, R.drawable.programming_lab_3 to 220.dp),
+        Pair(R.drawable.programming_lab_1 to 200.dp, R.drawable.programming_lab_2 to 220.dp),
     )
 
     LazyColumn(
@@ -69,8 +66,8 @@ fun GardenUI() {
                 contentAlignment = Alignment.TopCenter
             ) {
                 Image(
-                    painter = painterResource(id = R.drawable.garden_head),
-                    contentDescription = "Department of Computer Science and Engineering",
+                    painter = painterResource(id = R.drawable.cse_labs),
+                    contentDescription = "Department of Electrical Engineering",
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(vertical = 8.dp)

@@ -13,7 +13,12 @@
         android:theme="@style/Theme.DYP"
         tools:targetApi="31">
         <activity
-            android:name=".CSE_labs"
+            android:name=".ElectricalLab"
+            android:exported="false"
+            android:label="@string/title_activity_electrical_lab"
+            android:theme="@style/Theme.DYP" />
+        <activity
+            android:name=".CSE_lab"
             android:exported="false" />
         <activity
             android:name=".Classrooms"

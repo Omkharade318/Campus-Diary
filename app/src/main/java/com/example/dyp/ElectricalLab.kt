@@ -1,19 +1,14 @@
 package com.example.dyp
 
 import android.os.Bundle
+import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.runtime.Composable
@@ -23,10 +18,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.dyp.ui.theme.DYPTheme
 
-class Garden : AppCompatActivity() {
+class ElectricalLab : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -35,25 +32,21 @@ class Garden : AppCompatActivity() {
                 statusBarStyle = SystemBarStyle.light(Color.Transparent.toArgb(), Color.White.toArgb())
             )
             DYPTheme {
-                GardenUI()
+                ElectricalLabUI()
             }
         }
     }
 }
 
 @Composable
-fun GardenUI() {
+fun ElectricalLabUI() {
     // Define a list of image pairs and heights for LazyRows
     val rows = listOf(
-        Pair(R.drawable.garden_pic1 to 180.dp, R.drawable.garden_pic2 to 180.dp),
-        Pair(R.drawable.garden_pic3 to 170.dp, R.drawable.garden_pic4 to 180.dp),
-        Pair(R.drawable.garden_pic5 to 200.dp, R.drawable.garden_pic6 to 220.dp),
-        Pair(R.drawable.garden_pic7 to 220.dp, R.drawable.garden_pic8 to 200.dp),
-        Pair(R.drawable.garden_pic9 to 210.dp, R.drawable.garden_pic_10 to 210.dp),
-        Pair(R.drawable.garden_pic_11 to 190.dp, R.drawable.garden_pic_12 to 220.dp),
-        Pair(R.drawable.garden_pic_13 to 170.dp, R.drawable.garden_pic_14 to 195.dp),
-        Pair(R.drawable.garden_pic_15 to 200.dp, R.drawable.garden_pic_16 to 220.dp),
-        Pair(R.drawable.garden_pic_17 to 205.dp, R.drawable.garden_pic_18 to 220.dp),
+        Pair(R.drawable.deparment_of_electrical_pic1 to 180.dp, R.drawable.deparment_of_electrical_pic2 to 180.dp),
+        Pair(R.drawable.electrical_project_lab to 170.dp, R.drawable.electrical_project_2 to 180.dp),
+        Pair(R.drawable.basic_electrical_lab to 200.dp, R.drawable.electrical_machine_lab to 220.dp),
+        Pair(R.drawable.control_system_and_power_system_lab to 200.dp, R.drawable.advanced_switchgear_and_protection_lab to 220.dp),
+        Pair(R.drawable.analog_electronics_and_power_electronics_lab to 220.dp, R.drawable.electrical_measurements_and_instruments_lab1 to 235.dp)
     )
 
     LazyColumn(
@@ -69,8 +62,8 @@ fun GardenUI() {
                 contentAlignment = Alignment.TopCenter
             ) {
                 Image(
-                    painter = painterResource(id = R.drawable.garden_head),
-                    contentDescription = "Department of Computer Science and Engineering",
+                    painter = painterResource(id = R.drawable.department_of_electrical_engg),
+                    contentDescription = "Department of Electrical Engineering",
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(vertical = 8.dp)
@@ -108,3 +101,31 @@ fun GardenUI() {
 
 }
 
+
+@Composable
+fun MyImage(
+    modifier: Modifier = Modifier,
+    contentDescription: String? = null,
+    id: Int,
+    onClick: () -> Unit = {},
+    height: Dp,
+    width: Dp
+) {
+    Image(
+        painter = painterResource(id),
+        contentDescription = contentDescription,
+        modifier = modifier
+            .height(height)
+            .width(width)
+            .clickable(onClick = onClick),
+        contentScale = ContentScale.FillBounds
+    )
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun PreviewElectricalLabUI() {
+    DYPTheme {
+        ElectricalLabUI()
+    }
+}
