@@ -94,10 +94,11 @@ class MainActivity : AppCompatActivity() {
 
         // Set up ImageSlider
         val imageList = ArrayList<SlideModel>()
-        imageList.add(SlideModel(R.drawable.database_and_analytics_lab, ScaleTypes.FIT))
-        imageList.add(SlideModel(R.drawable.datascience_and_artificial_intelligence_lab, ScaleTypes.FIT))
-        imageList.add(SlideModel(R.drawable.networking_and_cybersecurity_lab, ScaleTypes.FIT))
-        imageList.add(SlideModel(R.drawable.machine_learning_and_deep_learning_lab, ScaleTypes.FIT))
+        imageList.add(SlideModel(R.drawable.garden_pic_12, ScaleTypes.FIT))
+        imageList.add(SlideModel(R.drawable.garden_pic_15, ScaleTypes.FIT))
+        imageList.add(SlideModel(R.drawable.garden_pic_13, ScaleTypes.FIT))
+        imageList.add(SlideModel(R.drawable.garden_pic_16, ScaleTypes.FIT))
+        imageList.add(SlideModel(R.drawable.garden_pic_17, ScaleTypes.FIT))
 
         val imageSlider = binding.imageSlider
         imageSlider.setImageList(imageList, ScaleTypes.FIT)
