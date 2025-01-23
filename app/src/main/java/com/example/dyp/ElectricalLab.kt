@@ -7,7 +7,6 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
@@ -21,7 +20,6 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.dyp.ui.theme.DYPTheme
 
@@ -132,26 +130,6 @@ fun ElectricalLabUI() {
     }
 }
 
-
-@Composable
-fun MyImage(
-    modifier: Modifier = Modifier,
-    contentDescription: String? = null,
-    id: Int,
-    onClick: () -> Unit = {},
-    height: Dp,
-    width: Dp
-) {
-    Image(
-        painter = painterResource(id),
-        contentDescription = contentDescription,
-        modifier = modifier
-            .height(height)
-            .width(width)
-            .clickable(onClick = onClick),
-        contentScale = ContentScale.FillBounds
-    )
-}
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
