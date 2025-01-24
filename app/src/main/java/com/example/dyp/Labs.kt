@@ -34,6 +34,16 @@ class Labs : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.Civil.setOnClickListener {
+            val intent = Intent(this, CivilLabs::class.java)
+            startActivity(intent)
+        }
+
+        binding.Mechanical.setOnClickListener {
+            val intent = Intent(this, MechanicalLab::class.java)
+            startActivity(intent)
+        }
+
     }
 }
 
