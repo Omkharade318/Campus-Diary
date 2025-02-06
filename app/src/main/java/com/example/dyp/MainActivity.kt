@@ -2,14 +2,23 @@ package com.example.dyp
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.SystemBarStyle
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.compose.foundation.layout.Box
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.dyp.databinding.ActivityMainBinding
+import com.example.dyp.ui.theme.DYPTheme
 
 class MainActivity : AppCompatActivity() {
-
     private val binding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
@@ -102,6 +111,22 @@ class MainActivity : AppCompatActivity() {
 
         val imageSlider = binding.imageSlider
         imageSlider.setImageList(imageList, ScaleTypes.FIT)
+
+        setContent {
+            enableEdgeToEdge(
+                statusBarStyle = SystemBarStyle.light(Color.Transparent.toArgb(), Color.White.toArgb())
+            )
+            DYPTheme {
+                HomeScreen()
+            }
+        }
     }
     
+}
+
+@Composable
+fun HomeScreen() {
+    Box(contentAlignment = Alignment.Center){
+        Text(text = "Home Screen")
+    }
 }
