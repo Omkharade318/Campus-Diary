@@ -22,6 +22,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.dyp.ui.theme.DYPTheme
+import ir.kaaveh.sdpcompose.sdp
 
 class ElectricalLab : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,24 +56,24 @@ fun ElectricalLabUI() {
 
         val rows = listOf(
             Pair(
-                R.drawable.deparment_of_electrical_pic1 to 180.dp,
-                R.drawable.deparment_of_electrical_pic2 to 180.dp
+                R.drawable.deparment_of_electrical_pic1 to 180.sdp,
+                R.drawable.deparment_of_electrical_pic2 to 180.sdp
             ),
             Pair(
-                R.drawable.electrical_project_lab to 170.dp,
-                R.drawable.electrical_project_2 to 180.dp
+                R.drawable.electrical_project_lab to 170.sdp,
+                R.drawable.electrical_project_2 to 180.sdp
             ),
             Pair(
-                R.drawable.basic_electrical_lab to 200.dp,
-                R.drawable.electrical_machine_lab to 220.dp
+                R.drawable.basic_electrical_lab to 200.sdp,
+                R.drawable.electrical_machine_lab to 220.sdp
             ),
             Pair(
-                R.drawable.control_system_and_power_system_lab to 200.dp,
-                R.drawable.advanced_switchgear_and_protection_lab to 220.dp
+                R.drawable.control_system_and_power_system_lab to 200.sdp,
+                R.drawable.advanced_switchgear_and_protection_lab to 220.sdp
             ),
             Pair(
-                R.drawable.analog_electronics_and_power_electronics_lab to 220.dp,
-                R.drawable.electrical_measurements_and_instruments_lab1 to 235.dp
+                R.drawable.analog_electronics_and_power_electronics_lab to 220.sdp,
+                R.drawable.electrical_measurements_and_instruments_lab1 to 235.sdp
             )
         )
 
@@ -80,7 +81,7 @@ fun ElectricalLabUI() {
             modifier = Modifier
                 .fillMaxSize()
                 .background(Color.White)
-                .padding(horizontal = 8.dp, vertical = 32.dp)
+                .padding(horizontal = 8.sdp, vertical = 32.sdp)
         ) {
             // Header Image
             item {
@@ -93,8 +94,8 @@ fun ElectricalLabUI() {
                         contentDescription = "Department of Electrical Engineering",
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(vertical = 8.dp)
-                            .height(200.dp),
+                            .padding(vertical = 8.sdp)
+                            .height(200.sdp),
                         contentScale = ContentScale.FillBounds
                     )
                 }
@@ -102,7 +103,7 @@ fun ElectricalLabUI() {
 
             // Use items to iterate over the rows
             items(rows.size) { row ->
-                LazyRow(modifier = Modifier.padding(vertical = 8.dp)) {
+                LazyRow(modifier = Modifier.padding(vertical = 8.sdp)) {
                     item {
                         val (image1, image2) = rows[row]
 
@@ -110,17 +111,17 @@ fun ElectricalLabUI() {
                         MyImage(
                             id = image1.first,
                             height = image1.second,
-                            width = 210.dp,
+                            width = 210.sdp,
                             onClick = { selectedImage.value = image1.first }
                         )
 
-                        Spacer(modifier = Modifier.width(8.dp))
+                        Spacer(modifier = Modifier.width(8.sdp))
 
                         // Second image
                         MyImage(
                             id = image2.first,
                             height = image2.second,
-                            width = 215.dp,
+                            width = 215.sdp,
                             onClick = { selectedImage.value = image2.first }
                         )
                     }

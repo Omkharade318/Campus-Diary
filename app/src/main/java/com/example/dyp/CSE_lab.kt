@@ -130,35 +130,4 @@ fun CSELabUI() {
     }
 }
 
-@Composable
-fun MyImage(id: Int, height: Dp, width: Dp, onClick: () -> Unit) {
-    Image(
-        painter = painterResource(id = id),
-        contentDescription = null,
-        modifier = Modifier
-            .width(width)
-            .height(height)
-            .background(Color.Gray)
-            .clickable { onClick() },
-        contentScale = ContentScale.Crop
-    )
-}
-
-@Composable
-fun FullScreenImage(imageId: Int, onClose: () -> Unit) {
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color.Black)
-            .clickable { onClose() },
-        contentAlignment = Alignment.Center
-    ) {
-        Image(
-            painter = painterResource(id = imageId),
-            contentDescription = null,
-            modifier = Modifier.fillMaxSize(),
-            contentScale = ContentScale.Fit
-        )
-    }
-}
 

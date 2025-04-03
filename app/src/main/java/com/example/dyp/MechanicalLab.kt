@@ -22,6 +22,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.dyp.ui.theme.DYPTheme
+import ir.kaaveh.sdpcompose.sdp
 
 class MechanicalLab : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,20 +57,20 @@ fun MechanicalLabUI() {
 
         val rows = listOf(
             Pair(
-                R.drawable.strength_of_material_lab to 180.dp,
-                R.drawable.automobile_engineering_lab to 180.dp
+                R.drawable.strength_of_material_lab to 180.sdp,
+                R.drawable.automobile_engineering_lab to 180.sdp
             ),
             Pair(
-                R.drawable.theory_of_machine_and_noise_vibration_lab to 170.dp,
-                R.drawable.thermodynamics_engineering_and_testing_and_measurement_lab to 180.dp
+                R.drawable.theory_of_machine_and_noise_vibration_lab to 170.sdp,
+                R.drawable.thermodynamics_engineering_and_testing_and_measurement_lab to 180.sdp
             ),
             Pair(
-                R.drawable.cad_cam_1_lab to 200.dp,
-                R.drawable.mqc_and_metallurgy_lab to 220.dp
+                R.drawable.cad_cam_1_lab to 200.sdp,
+                R.drawable.mqc_and_metallurgy_lab to 220.sdp
             ),
             Pair(
-                R.drawable.refrigeration_and_air_conditioning_and_mechatronics_lab to 200.dp,
-                R.drawable.heat_and_mass_transfer_lab1 to 220.dp
+                R.drawable.refrigeration_and_air_conditioning_and_mechatronics_lab to 200.sdp,
+                R.drawable.heat_and_mass_transfer_lab1 to 220.sdp
             )
         )
 
@@ -77,7 +78,7 @@ fun MechanicalLabUI() {
             modifier = Modifier
                 .fillMaxSize()
                 .background(Color.White)
-                .padding(horizontal = 8.dp, vertical = 32.dp)
+                .padding(horizontal = 8.sdp, vertical = 32.sdp)
         ) {
             // Header Image
             item {
@@ -90,8 +91,8 @@ fun MechanicalLabUI() {
                         contentDescription = "Department of Electrical Engineering",
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(vertical = 8.dp)
-                            .height(200.dp),
+                            .padding(vertical = 8.sdp)
+                            .height(200.sdp),
                         contentScale = ContentScale.FillBounds
                     )
                 }
@@ -99,7 +100,7 @@ fun MechanicalLabUI() {
 
             // Use items to iterate over the rows
             items(rows.size) { row ->
-                LazyRow(modifier = Modifier.padding(vertical = 8.dp)) {
+                LazyRow(modifier = Modifier.padding(vertical = 8.sdp)) {
                     item {
                         val (image1, image2) = rows[row]
 
@@ -107,17 +108,17 @@ fun MechanicalLabUI() {
                         MyImage(
                             id = image1.first,
                             height = image1.second,
-                            width = 210.dp,
+                            width = 210.sdp,
                             onClick = { selectedImage.value = image1.first }
                         )
 
-                        Spacer(modifier = Modifier.width(8.dp))
+                        Spacer(modifier = Modifier.width(8.sdp))
 
                         // Second image
                         MyImage(
                             id = image2.first,
                             height = image2.second,
-                            width = 215.dp,
+                            width = 215.sdp,
                             onClick = { selectedImage.value = image2.first }
                         )
                     }

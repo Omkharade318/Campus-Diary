@@ -25,8 +25,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.dp
 import com.example.dyp.ui.theme.DYPTheme
+import ir.kaaveh.sdpcompose.sdp
 
 class Garden : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,22 +60,22 @@ fun GardenUI() {
 
         // Define a list of image pairs and heights for LazyRows
         val rows = listOf(
-            Pair(R.drawable.garden_pic1 to 180.dp, R.drawable.garden_pic2 to 180.dp),
-            Pair(R.drawable.garden_pic3 to 170.dp, R.drawable.garden_pic4 to 180.dp),
-            Pair(R.drawable.garden_pic5 to 200.dp, R.drawable.garden_pic6 to 220.dp),
-            Pair(R.drawable.garden_pic7 to 220.dp, R.drawable.garden_pic8 to 200.dp),
-            Pair(R.drawable.garden_pic9 to 210.dp, R.drawable.garden_pic_10 to 210.dp),
-            Pair(R.drawable.garden_pic_11 to 190.dp, R.drawable.garden_pic_12 to 220.dp),
-            Pair(R.drawable.garden_pic_13 to 170.dp, R.drawable.garden_pic_14 to 195.dp),
-            Pair(R.drawable.garden_pic_15 to 200.dp, R.drawable.garden_pic_16 to 220.dp),
-            Pair(R.drawable.garden_pic_17 to 205.dp, R.drawable.garden_pic_18 to 220.dp),
+            Pair(R.drawable.garden_pic1 to 180.sdp, R.drawable.garden_pic2 to 180.sdp),
+            Pair(R.drawable.garden_pic3 to 170.sdp, R.drawable.garden_pic4 to 180.sdp),
+            Pair(R.drawable.garden_pic5 to 200.sdp, R.drawable.garden_pic6 to 220.sdp),
+            Pair(R.drawable.garden_pic7 to 220.sdp, R.drawable.garden_pic8 to 200.sdp),
+            Pair(R.drawable.garden_pic9 to 210.sdp, R.drawable.garden_pic_10 to 210.sdp),
+            Pair(R.drawable.garden_pic_11 to 190.sdp, R.drawable.garden_pic_12 to 220.sdp),
+            Pair(R.drawable.garden_pic_13 to 170.sdp, R.drawable.garden_pic_14 to 195.sdp),
+            Pair(R.drawable.garden_pic_15 to 200.sdp, R.drawable.garden_pic_16 to 220.sdp),
+            Pair(R.drawable.garden_pic_17 to 205.sdp, R.drawable.garden_pic_18 to 220.sdp),
         )
 
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
                 .background(Color.White)
-                .padding(horizontal = 8.dp, vertical = 32.dp)
+                .padding(horizontal = 8.sdp, vertical = 32.sdp)
         ) {
             // Header Image
             item {
@@ -88,8 +88,8 @@ fun GardenUI() {
                         contentDescription = "Department of Computer Science and Engineering",
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(vertical = 8.dp)
-                            .height(200.dp),
+                            .padding(vertical = 8.sdp)
+                            .height(200.sdp),
                         contentScale = ContentScale.FillBounds
                     )
                 }
@@ -97,7 +97,7 @@ fun GardenUI() {
 
             // Use items to iterate over the rows
             items(rows.size) { row ->
-                LazyRow(modifier = Modifier.padding(vertical = 8.dp)) {
+                LazyRow(modifier = Modifier.padding(vertical = 8.sdp)) {
                     item {
                         val (image1, image2) = rows[row]
 
@@ -105,17 +105,17 @@ fun GardenUI() {
                         MyImage(
                             id = image1.first,
                             height = image1.second,
-                            width = 210.dp,
+                            width = 210.sdp,
                             onClick = { selectedImage.value = image1.first }
                         )
 
-                        Spacer(modifier = Modifier.width(8.dp))
+                        Spacer(modifier = Modifier.width(8.sdp))
 
                         // Second image
                         MyImage(
                             id = image2.first,
                             height = image2.second,
-                            width = 215.dp,
+                            width = 215.sdp,
                             onClick = { selectedImage.value = image2.first }
                         )
                     }

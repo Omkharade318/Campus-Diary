@@ -112,21 +112,6 @@ class MainActivity : AppCompatActivity() {
         val imageSlider = binding.imageSlider
         imageSlider.setImageList(imageList, ScaleTypes.FIT)
 
-        setContent {
-            enableEdgeToEdge(
-                statusBarStyle = SystemBarStyle.light(Color.Transparent.toArgb(), Color.White.toArgb())
-            )
-            DYPTheme {
-                HomeScreen()
-            }
-        }
     }
     
-}
-
-@Composable
-fun HomeScreen() {
-    Box(contentAlignment = Alignment.Center){
-        Text(text = "Home Screen")
-    }
 }
